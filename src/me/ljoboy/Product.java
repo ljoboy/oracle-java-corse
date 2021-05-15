@@ -48,11 +48,16 @@ public class Product {
         this.prix = prix;
     }
 
+    public float getInventoryValue() {
+        return quantite * prix;
+    }
+
     @Override
     public String toString() {
         return "Numéro de l'article : " + numero + '\n' +
                 "Nom                : " + nom + '\n' +
                 "Quantité en stock  : " + quantite + '\n' +
-                "Prix               : " + prix + '\n';
+                "Prix               : " + prix + '\n' +
+                "Valeur du stock    : " + getInventoryValue() + '\n';
     }
 }
