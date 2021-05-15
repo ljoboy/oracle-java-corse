@@ -5,7 +5,7 @@ public class Product {
     private String nom;
     private int quantite;
     private float prix;
-    private boolean active;
+    private boolean active = true;
 
     public Product() {
     }
