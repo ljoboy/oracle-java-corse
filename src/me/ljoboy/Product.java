@@ -5,6 +5,7 @@ public class Product {
     private String nom;
     private int quantite;
     private float prix;
+    private boolean active;
 
     public Product() {
     }
@@ -48,6 +49,14 @@ public class Product {
         this.prix = prix;
     }
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public float getInventoryValue() {
         return quantite * prix;
     }
@@ -58,6 +67,7 @@ public class Product {
                 "Nom                : " + nom + '\n' +
                 "Quantité en stock  : " + quantite + '\n' +
                 "Prix               : " + prix + '\n' +
-                "Valeur du stock    : " + getInventoryValue() + '\n';
+                "Valeur du stock    : " + getInventoryValue() + '\n' +
+                "Statut du produit  : " + (isActive() ? "Réapprovisionné" : "Non réaprovisionné");
     }
 }
