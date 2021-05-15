@@ -10,5 +10,12 @@ public class Main {
         Product p4 = new Product(4, "Stylo", 270, 1f);
         Product p5 = new Product(5, "Bracelet", 200, 2.5f);
         Product p6 = new Product(6, "Bague", 250, 1.5f);
+
+        System.out.println(p1);
+        System.out.println(p2);
+        System.out.println(p3);
+        System.out.println(p4);
+        System.out.println(p5);
+        System.out.println(p6);
     }
 }
