@@ -6,24 +6,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int maxSize;
         Scanner in = new Scanner(System.in);
-
-        Product[] products;
+        int maxSize, menuChoice;
 
         maxSize = Main.getNumProducts(in);
-
-        products = new Product[maxSize];
-
         if (maxSize == 0) {
             System.out.println("Aucun produit n'est requis");
         } else {
 
+            Product[] products = new Product[maxSize];
             Main.addToInventory(products, in);
+            do {
+                menuChoice = Main.getMenuOption(in);
+                Main.executeMenuChoice(menuChoice, products, in);
+            } while (menuChoice != 0);
 
-            in.close();
-
-            Main.displayInventory(products);
         }
 
 
