@@ -9,6 +9,8 @@ public class Main {
         int maxSize = -1;
         Scanner in = new Scanner(System.in);
 
+        Product[] products;
+
         do {
             try {
                 System.out.println("Saisissez le nombre de produits à ajouter");
@@ -28,38 +30,19 @@ public class Main {
             }
         } while (maxSize < 0);
 
+        products = new Product[maxSize];
+
         if (maxSize == 0) {
             System.out.println("Aucun produit n'est requis");
         } else {
-            Product[] products = new Product[maxSize];
-            
-            int tempQty, tempNumber;
-            String tempName;
-            float tempPrice;
-            
-            for (int i = 0; i < maxSize; i++) {
-                in.nextLine();
 
-                System.out.println("Nom ==> ");
-                tempName = in.nextLine();
-                System.out.println("Numero ==> ");
-                tempNumber = in.nextInt();
-                System.out.println("Prix ==> ");
-                tempPrice = in.nextFloat();
-                System.out.println("Quantité en stock ==> ");
-                tempQty = in.nextInt();
-
-                products[i] = new Product(tempNumber, tempName, tempQty, tempPrice);
-            }
+            Main.addToInventory(products, in);
 
             in.close();
 
-            for (Product p : products) {
-                System.out.println(p);
-            }
+            Main.displayInventory(products);
         }
 
-        
 
 //        System.out.println("Nom ==> ");
 //        tempName = in.nextLine();
@@ -83,5 +66,33 @@ public class Main {
 //        System.out.println(p4);
 //        System.out.println(p5);
 //        System.out.println(p6);
+    }
+
+    public static void displayInventory(Product[] products) {
+        for (Product p : products) {
+            System.out.println(p);
+        }
+    }
+
+    public static void addToInventory(Product[] products, Scanner in) {
+        int tempQty, tempNumber;
+        String tempName;
+        float tempPrice;
+
+
+        for (int i = 0; i < products.length; i++) {
+            in.nextLine();
+
+            System.out.println("Nom ==> ");
+            tempName = in.nextLine();
+            System.out.println("Numero ==> ");
+            tempNumber = in.nextInt();
+            System.out.println("Prix ==> ");
+            tempPrice = in.nextFloat();
+            System.out.println("Quantité en stock ==> ");
+            tempQty = in.nextInt();
+
+            products[i] = new Product(tempNumber, tempName, tempQty, tempPrice);
+        }
     }
 }
