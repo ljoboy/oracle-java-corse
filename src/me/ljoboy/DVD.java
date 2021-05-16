@@ -5,6 +5,13 @@ public class DVD extends Product {
     private int age;
     private String studio;
 
+    public DVD(int numero, String nom, int quantite, float prix, int duree, int age, String studio) {
+        super(numero, nom, quantite, prix);
+        this.duree = duree;
+        this.age = age;
+        this.studio = studio;
+    }
+
     public int getDuree() {
         return duree;
     }
