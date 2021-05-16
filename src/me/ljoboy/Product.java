@@ -18,7 +18,9 @@ public class Product {
     }
 
     public void addToInventory(int quantite) {
-        this.quantite += quantite;
+        if (this.isActive()) {
+            this.quantite += quantite;
+        }
     }
 
     public void deductFromInventory(int quantite) {
