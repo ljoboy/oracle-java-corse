@@ -208,26 +208,49 @@ public class Main {
         return maxSize;
     }
 
-    public static void addInventory(Product[] products, Scanner in) {
-        int productChoice, updateValue = -1;
+    public static void addInventory(Product[] products, Scanner in, int i) {
+//        int productChoice, updateValue = -1;
+//        productChoice = Main.getProductNumber(products, in);
 
-        productChoice = Main.getProductNumber(products, in);
+//        try {
+//            do {
+//                System.out.println("Combien des produits voulez-vous ajouter ?");
+//                updateValue = in.nextInt();
+//                if (updateValue < 0) {
+//                    System.out.println("Valeur incorrecte saisie");
+//                }
+//            } while (updateValue < 0);
+//        } catch (InputMismatchException e) {
+//            System.out.println("Type de données incorrect saisi");
+//        } catch (Exception e) {
+//            System.out.println(e);
+//        }
+//
+//        products[productChoice].addToInventory(updateValue);
+        int stockChoice = -1;
 
         try {
             do {
-                System.out.println("Combien des produits voulez-vous ajouter ?");
-                updateValue = in.nextInt();
-                if (updateValue < 0) {
+                System.out.println("1. CD ");
+                System.out.println("2. DVD ");
+                System.out.println("Veuillez saisir le type de produit : ");
+                stockChoice = in.nextInt();
+
+                if (stockChoice < 1 || stockChoice > 2) {
                     System.out.println("Valeur incorrecte saisie");
                 }
-            } while (updateValue < 0);
-        } catch (InputMismatchException e) {
+            } while (stockChoice < 1 || stockChoice > 2);
+        }  catch (InputMismatchException e) {
             System.out.println("Type de données incorrect saisi");
         } catch (Exception e) {
             System.out.println(e);
         }
 
-        products[productChoice].addToInventory(updateValue);
+        if (stockChoice == 1) {
+            Main.addCDToInventory(products, in, i);
+        } else {
+            Main.addDVDToInventory(products, in, i);
+        }
     }
 
     public static void deductInventory(Product[] products, Scanner in) {
@@ -267,7 +290,8 @@ public class Main {
                 break;
             case 2:
                 System.out.println("Ajouter une quantité de stock");
-                Main.addInventory(products, in);
+                // To do le "i" doit normalement provenir de quelque part dans l'exercice suivante
+                Main.addInventory(products, in, 0);
                 break;
             case 3:
                 System.out.println("Déduire une quantité de stock");
