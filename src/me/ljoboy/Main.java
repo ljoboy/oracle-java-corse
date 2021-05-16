@@ -131,13 +131,11 @@ public class Main {
         }
     }
 
-    public static void addCDToInventory(Product[] products, Scanner in) {
+    public static void addCDToInventory(Product[] products, Scanner in, int i) {
         int tempQty, tempNumber, tempNbTitres;
         String tempName, tempArtist, tempMson;
         float tempPrice;
 
-
-        for (int i = 0; i < products.length; i++) {
             in.nextLine();
 
             System.out.println("Nom du CD==> ");
@@ -149,14 +147,14 @@ public class Main {
             System.out.println("Numero ==> ");
             tempNumber = in.nextInt();
             System.out.println("Nombre de titre ==> ");
-            tempNumber = in.nextInt();
+            tempNbTitres = in.nextInt();
             System.out.println("Prix ==> ");
             tempPrice = in.nextFloat();
             System.out.println("Quantité en stock ==> ");
             tempQty = in.nextInt();
 
-            products[i] = new Product(tempNumber, tempName, tempQty, tempPrice);
-        }
+            products[i] = new CD(tempNumber, tempName, tempQty, tempPrice, tempArtist, tempNbTitres, tempMson);
+
     }
 
     public static int getNumProducts(Scanner in) {
