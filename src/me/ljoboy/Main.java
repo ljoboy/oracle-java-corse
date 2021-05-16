@@ -51,6 +51,32 @@ public class Main {
 //        System.out.println(p6);
     }
 
+    public static int getProductNumber(Product[] products, Scanner in) {
+        int productChoice = -1;
+
+        for (int i = 0; i < products.length; i++) {
+            System.out.println(products[i].getNumero() + ". " + products[i].getNom());
+        }
+        try{
+            do {
+                System.out.println("Entrer votre choix : ");
+                productChoice = in.nextInt();
+
+                if (productChoice < 0 || productChoice > 1) {
+                    System.out.println("Valeur incorrecte saisie");
+                }
+            } while (productChoice < 0 || productChoice > 1);
+        } catch (InputMismatchException e) {
+            System.out.println("Type de données incorrect saisi");
+            in.nextLine();
+        } catch (Exception e) {
+            System.out.println(e);
+            in.nextLine();
+        }
+
+        return productChoice;
+    }
+
     public static int getMenuOption(Scanner in) {
         int choix = -1;
         do {
