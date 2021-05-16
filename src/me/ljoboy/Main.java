@@ -57,7 +57,7 @@ public class Main {
         for (int i = 0; i < products.length; i++) {
             System.out.println(products[i].getNumero() + ". " + products[i].getNom());
         }
-        try{
+        try {
             do {
                 System.out.println("Entrer votre choix : ");
                 productChoice = in.nextInt();
@@ -157,6 +157,28 @@ public class Main {
         } while (maxSize < 0);
 
         return maxSize;
+    }
+
+    public static void addInventory(Product[] products, Scanner in) {
+        int productChoice, updateValue = -1;
+
+        productChoice = Main.getProductNumber(products, in);
+
+        try {
+            do {
+                System.out.println("Combien des produits voulez-vous ajouter ?");
+                updateValue = in.nextInt();
+                if (updateValue < 0) {
+                    System.out.println("Valeur incorrecte saisie");
+                }
+            } while (updateValue < 0);
+        } catch (InputMismatchException e) {
+            System.out.println("Type de données incorrect saisi");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        products[productChoice].addToInventory(updateValue);
     }
 
 }
