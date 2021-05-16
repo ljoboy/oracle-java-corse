@@ -45,10 +45,10 @@ public class DVD extends Product {
     public String toString() {
         return "Numéro de l'article  : " + getNumero() + '\n' +
                 "Nom                 : " + getNom() + '\n' +
-                "Quantité en stock   : " + getQuantite() + '\n' +
                 "Durée du film       : " + getDuree() + '\n' +
                 "Classification d'âge: " + getAge() + '\n' +
                 "Studio              : " + getStudio() + '\n' +
+                "Quantité en stock   : " + getQuantite() + '\n' +
                 "Prix                : " + getPrix() + '\n' +
                 "Valeur du stock     : " + getInventoryValue() + '\n' +
                 "Statut du produit   : " + (isActive() ? "Réapprovisionné" : "Non réaprovisionné");
