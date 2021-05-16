@@ -210,4 +210,25 @@ public class Main {
         products[productChoice].setActive(false);
     }
 
+    public static void executeMenuChoice(int menuChoice, Product[] products, Scanner in) {
+        switch (menuChoice) {
+            case 1:
+                System.out.println("Afficher la liste des produits");
+                Main.displayInventory(products);
+                break;
+            case 2:
+                System.out.println("Ajouter une quantité de stock");
+                Main.addInventory(products, in);
+                break;
+            case 3:
+                System.out.println("Déduire une quantité de stock");
+                Main.deductInventory(products, in);
+                break;
+            case 4:
+                System.out.println("Ne pas réapprovisionner le stock");
+                Main.discontinueInventory(products, in);
+                break;
+        }
+    }
+
 }
