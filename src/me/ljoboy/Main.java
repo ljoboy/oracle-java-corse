@@ -131,6 +131,34 @@ public class Main {
         }
     }
 
+    public static void addCDToInventory(Product[] products, Scanner in) {
+        int tempQty, tempNumber, tempNbTitres;
+        String tempName, tempArtist, tempMson;
+        float tempPrice;
+
+
+        for (int i = 0; i < products.length; i++) {
+            in.nextLine();
+
+            System.out.println("Nom du CD==> ");
+            tempName = in.nextLine();
+            System.out.println("Nom de l'artiste ==> ");
+            tempArtist = in.nextLine();
+            System.out.println("Nom de la maison de disque ==> ");
+            tempMson = in.nextLine();
+            System.out.println("Numero ==> ");
+            tempNumber = in.nextInt();
+            System.out.println("Nombre de titre ==> ");
+            tempNumber = in.nextInt();
+            System.out.println("Prix ==> ");
+            tempPrice = in.nextFloat();
+            System.out.println("Quantité en stock ==> ");
+            tempQty = in.nextInt();
+
+            products[i] = new Product(tempNumber, tempName, tempQty, tempPrice);
+        }
+    }
+
     public static int getNumProducts(Scanner in) {
         int maxSize = -1;
 
