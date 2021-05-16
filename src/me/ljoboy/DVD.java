@@ -35,4 +35,9 @@ public class DVD extends Product {
     public void setStudio(String studio) {
         this.studio = studio;
     }
+
+    @Override
+    public float getInventoryValue() {
+        return (super.getInventoryValue() * 5) / 100;
+    }
 }
