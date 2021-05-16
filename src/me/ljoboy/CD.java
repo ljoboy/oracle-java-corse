@@ -35,4 +35,17 @@ public class CD extends Product {
     public void setMson_Disque(String mson_Disque) {
         this.mson_Disque = mson_Disque;
     }
+
+    @Override
+    public String toString() {
+        return "Numéro de l'article : " + getNumero() + '\n' +
+                "Nom                : " + getNom() + '\n' +
+                "Artiste            : " + getPrix() + '\n' +
+                "Titres de l'album  : " + getPrix() + '\n' +
+                "Maison de disques  : " + getPrix() + '\n' +
+                "Quantité en stock  : " + getQuantite() + '\n' +
+                "Prix               : " + getPrix() + '\n' +
+                "Valeur du stock    : " + getInventoryValue() + '\n' +
+                "Statut du produit  : " + (isActive() ? "Réapprovisionné" : "Non réaprovisionné");
+    }
 }
