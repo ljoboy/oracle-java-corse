@@ -17,6 +17,14 @@ public class Product {
         this.prix = prix;
     }
 
+    public void addToInventory(int quantite) {
+        this.quantite += quantite;
+    }
+
+    public void deductFromInventory(int quantite) {
+        this.quantite -= quantite;
+    }
+
     public int getNumero() {
         return numero;
     }
