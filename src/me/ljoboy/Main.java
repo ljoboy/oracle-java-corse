@@ -203,4 +203,11 @@ public class Main {
         products[productChoice].deductFromInventory(updateValue);
     }
 
+    public static void discontinueInventory(Product[] products, Scanner in) {
+        int productChoice;
+
+        productChoice = Main.getProductNumber(products, in);
+        products[productChoice].setActive(false);
+    }
+
 }
