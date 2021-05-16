@@ -136,24 +136,50 @@ public class Main {
         String tempName, tempArtist, tempMson;
         float tempPrice;
 
-            in.nextLine();
+        in.nextLine();
 
-            System.out.println("Nom du CD==> ");
-            tempName = in.nextLine();
-            System.out.println("Nom de l'artiste ==> ");
-            tempArtist = in.nextLine();
-            System.out.println("Nom de la maison de disque ==> ");
-            tempMson = in.nextLine();
-            System.out.println("Numero ==> ");
-            tempNumber = in.nextInt();
-            System.out.println("Nombre de titre ==> ");
-            tempNbTitres = in.nextInt();
-            System.out.println("Prix ==> ");
-            tempPrice = in.nextFloat();
-            System.out.println("Quantité en stock ==> ");
-            tempQty = in.nextInt();
+        System.out.println("Nom du CD==> ");
+        tempName = in.nextLine();
+        System.out.println("Nom de l'artiste ==> ");
+        tempArtist = in.nextLine();
+        System.out.println("Nom de la maison de disque ==> ");
+        tempMson = in.nextLine();
+        System.out.println("Numero ==> ");
+        tempNumber = in.nextInt();
+        System.out.println("Nombre de titre ==> ");
+        tempNbTitres = in.nextInt();
+        System.out.println("Prix ==> ");
+        tempPrice = in.nextFloat();
+        System.out.println("Quantité en stock ==> ");
+        tempQty = in.nextInt();
 
-            products[i] = new CD(tempNumber, tempName, tempQty, tempPrice, tempArtist, tempNbTitres, tempMson);
+        products[i] = new CD(tempNumber, tempName, tempQty, tempPrice, tempArtist, tempNbTitres, tempMson);
+
+    }
+
+    public static void addDVDToInventory(Product[] products, Scanner in, int i) {
+        int tempQty, tempNumber, tempAge, tempMinutes;
+        String tempName, tempStudio;
+        float tempPrice;
+
+        in.nextLine();
+
+        System.out.println("Nom du DVD ==> ");
+        tempName = in.nextLine();
+        System.out.println("Nom du studio ==> ");
+        tempStudio = in.nextLine();
+        System.out.println("Âge ==> ");
+        tempAge = in.nextInt();
+        System.out.println("Numero ==> ");
+        tempNumber = in.nextInt();
+        System.out.println("Durée en minute ==> ");
+        tempMinutes = in.nextInt();
+        System.out.println("Prix ==> ");
+        tempPrice = in.nextFloat();
+        System.out.println("Quantité en stock ==> ");
+        tempQty = in.nextInt();
+
+        products[i] = new DVD(tempNumber, tempName, tempQty, tempPrice, tempMinutes, tempAge, tempStudio);
 
     }
 
