@@ -181,4 +181,26 @@ public class Main {
         products[productChoice].addToInventory(updateValue);
     }
 
+    public static void deductInventory(Product[] products, Scanner in) {
+        int productChoice, updateValue = -1;
+
+        productChoice = Main.getProductNumber(products, in);
+
+        try {
+            do {
+                System.out.println("Combien des produits voulez-vous déduire ?");
+                updateValue = in.nextInt();
+                if (updateValue < 0 || updateValue > products[productChoice].getQuantite()) {
+                    System.out.println("Valeur incorrecte saisie");
+                }
+            } while (updateValue < 0 || updateValue > products[productChoice].getQuantite());
+        } catch (InputMismatchException e) {
+            System.out.println("Type de données incorrect saisi");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        products[productChoice].deductFromInventory(updateValue);
+    }
+
 }
